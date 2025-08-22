@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "item": "minecraft:iron_block"
+    }
+  ],
+  "result":
+  {
+    "item": "examplemod:chunkpick",
+    "count": 1
+  }
+}
