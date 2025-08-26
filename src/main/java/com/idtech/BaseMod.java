@@ -152,7 +152,7 @@ public class BaseMod {
             // event.getRegistry.register(<entity type>)
             // also register the entity attributes with:
             // GlobalEntityTypeAttributes.put(<entity type>, <entity attribute method>.func_233813_a_());
-            EntityMod.registerEntities(event);
+          //  EntityMod.registerEntities(event);
 
         }
 
@@ -167,7 +167,7 @@ public class BaseMod {
 
         @SubscribeEvent
         public static void entityRenderers(final EntityRenderersEvent.RegisterRenderers event){
-            EntityMod.entityRenderers(event);
+           // EntityMod.entityRenderers(event);
         }
         @SubscribeEvent
         public static void attributeRegister(EntityAttributeCreationEvent event) {

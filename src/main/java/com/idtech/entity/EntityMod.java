@@ -36,27 +36,27 @@ public class EntityMod {
                             .build(new ResourceLocation(BaseMod.MODID, "redstone_golem").toString()));
 
     public static void register(IEventBus eBus){
-        //ENTITY_TYPES.register(eBus )
+        ENTITY_TYPES.register(eBus );
     }
 
-    @SubscribeEvent
-    public static void registerEntities(final RegistryEvent.Register<EntityType<?>> event){
-        event.getRegistry().register(ZomboEntity.TYPE);
-        event.getRegistry().register(CartoonMan.TYPE);
-        event.getRegistry().register(RedstoneGolem.TYPE);
-    }
-    @SubscribeEvent
-    public static void registerEntityEggs(final RegistryEvent.Register<Item> event) {
-        event.getRegistry().register(ZomboEntity.EGG);
-        event.getRegistry().register(CartoonMan.EGG);
-        event.getRegistry().register(RedstoneGolem.EGG);
-    }
-    @SubscribeEvent
-    public static void entityRenderers(final EntityRenderersEvent.RegisterRenderers event){
-        event.registerEntityRenderer(ZomboEntity.TYPE, ZomboRenderFactory.INSTANCE);
-        event.registerEntityRenderer(CartoonMan.TYPE, CartoonManRenderFactory.INSTANCE);
-        event.registerEntityRenderer(RedstoneGolem.TYPE, RedstoneGolemRenderFactory.INSTANCE);
-    }
+//    @SubscribeEvent
+//    public static void registerEntities(final RegistryEvent.Register<EntityType<?>> event){
+//        event.getRegistry().register(ZomboEntity.TYPE);
+//        event.getRegistry().register(CartoonMan.TYPE);
+//        event.getRegistry().register(RedstoneGolem.TYPE);
+//    }
+//    @SubscribeEvent
+//    public static void registerEntityEggs(final RegistryEvent.Register<Item> event) {
+//        event.getRegistry().register(ZomboEntity.EGG);
+//        event.getRegistry().register(CartoonMan.EGG);
+//        event.getRegistry().register(RedstoneGolem.EGG);
+//    }
+//    @SubscribeEvent
+//    public static void entityRenderers(final EntityRenderersEvent.RegisterRenderers event){
+//        event.registerEntityRenderer(ZomboEntity.TYPE, ZomboRenderFactory.INSTANCE);
+//        event.registerEntityRenderer(CartoonMan.TYPE, CartoonManRenderFactory.INSTANCE);
+//        event.registerEntityRenderer(RedstoneGolem.TYPE, RedstoneGolemRenderFactory.INSTANCE);
+//    }
 
     // this is different than in 1.16 but everything else is the same
     // I do think this makes more sense than the other way but alas change is usually hard.
