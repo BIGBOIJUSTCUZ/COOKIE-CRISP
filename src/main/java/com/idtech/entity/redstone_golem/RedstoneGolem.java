@@ -1,6 +1,8 @@
 package com.idtech.entity.redstone_golem;
 
 import com.idtech.BaseMod;
+import com.idtech.entity.CartoonMan;
+import com.idtech.entity.EntityMod;
 import com.idtech.entity.EntityUtils;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
@@ -15,15 +17,20 @@ import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
+import software.bernie.geckolib3.core.IAnimatable;
+import software.bernie.geckolib3.core.manager.AnimationData;
+import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 import javax.swing.text.html.parser.Entity;
 
-public class RedstoneGolem extends AbstractGolem {
-    public static final EntityType<RedstoneGolem> TYPE = (EntityType<RedstoneGolem>)
-            EntityType.Builder.<RedstoneGolem>of(RedstoneGolem::new, MobCategory.MISC).sized(1.4f,2.7f)
-                    .clientTrackingRange(12).build("redstone_golem").setRegistryName(BaseMod.MODID,"redstone_golem");
-
-    public static final Item EGG = EntityUtils.buildEntitySpawnEgg(TYPE,0x605E5E, 0xF60B0B);
+public class RedstoneGolem extends AbstractGolem implements IAnimatable {
+   //public static final EntityType<RedstoneGolem> TYPE = (EntityType<RedstoneGolem>)
+   //        EntityType.Builder.<RedstoneGolem>of(RedstoneGolem::new, MobCategory.MISC).sized(1.4f,2.7f)
+   //               .clientTrackingRange(12).build("redstone_golem");
+//   public static EntityType<RedstoneGolem> TYPE = (EntityType<RedstoneGolem>)
+//           EntityType.Builder.of(RedstoneGolem::new, MobCategory.MONSTER).sized(0.6F, 1.95F).
+//                   clientTrackingRange(8).build("redstone_golem").setRegistryName(BaseMod.MODID, "redstone_golem");
+//    public static final Item EGG = EntityUtils.buildEntitySpawnEgg(EntityMod.REDSTONE_GOLEM.get(),0x605E5E, 0xF60B0B);
 
     public RedstoneGolem(EntityType<? extends RedstoneGolem> entityIn, Level levelIn){
         super(entityIn,levelIn);
@@ -39,7 +46,17 @@ public class RedstoneGolem extends AbstractGolem {
         this.targetSelector.addGoal(2,new NearestAttackableTargetGoal<>(this,Player.class,true));
     }
 
-    public static AttributeSupplier.Builder createAttributes(){
-        return Mob.createMobAttributes().add(Attributes.MAX_HEALTH,100.0d).add(Attributes.MOVEMENT_SPEED,0.25D).add(Attributes.KNOCKBACK_RESISTANCE,1.0d).add(Attributes.ATTACK_DAMAGE,15.0d);
+    public static AttributeSupplier setAttributes(){
+        return Mob.createMobAttributes().add(Attributes.MAX_HEALTH,250.0d).add(Attributes.MOVEMENT_SPEED,0.25D).add(Attributes.KNOCKBACK_RESISTANCE,1.0d).add(Attributes.ATTACK_DAMAGE,20.0d).build();
+    }
+
+    @Override
+    public void registerControllers(AnimationData data) {
+
+    }
+
+    @Override
+    public AnimationFactory getFactory() {
+        return null;
     }
 }
