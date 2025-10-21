@@ -14,6 +14,7 @@ import net.minecraft.world.entity.Entity;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class RedstoneGolemModel extends AnimatedGeoModel<RedstoneGolem> {
+
 	@Override
 	public ResourceLocation getModelLocation(RedstoneGolem obj){
 		return new ResourceLocation(BaseMod.MODID, "geo/redstone_golem.geo.json");
@@ -26,4 +27,7 @@ public class RedstoneGolemModel extends AnimatedGeoModel<RedstoneGolem> {
 	public ResourceLocation getAnimationFileLocation(RedstoneGolem obj){
 		return new ResourceLocation(BaseMod.MODID, "animations/redstone_golem.animation.json");
 	}
+
+	//public static LayerDefinition createBodyLayer() {
+	//}
 }

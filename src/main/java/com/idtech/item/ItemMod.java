@@ -17,14 +17,14 @@ public class ItemMod {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, BaseMod.MODID);
 
-    public static final RegistryObject<Item> STRUCTURE_GEL = ITEMS.register("structurgel",
-            () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+  public static final RegistryObject<Item> STRUCTURE_GEL = ITEMS.register("structurgel",
+           () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
     public static final RegistryObject<Item> OHS_ITEM = ITEMS.register("ohs",
             () -> new OHS (Tiers.NETHERITE,1000000, 100, OHS.properties));
-    public static final RegistryObject<Item> CHUNKPICK_ITEM = ITEMS.register("chunckpick",
-            () -> new Chunkpick(Tiers.IRON,100, 100, Chunkpick.properties));
-    public static final RegistryObject<Item> CARTOON_HAMMER_ITEM = ITEMS.register("cartoonh",
-            () -> new CartoonHamer(Tiers.IRON, 25, 30, CartoonHamer.properties));
+//    public static final RegistryObject<Item> CHUNKPICK_ITEM = ITEMS.register("chunckpick",
+//            () -> new Chunkpick(Tiers.IRON,100, 100, Chunkpick.properties));
+//    public static final RegistryObject<Item> CARTOON_HAMMER_ITEM = ITEMS.register("cartoonh",
+//            () -> new CartoonHamer(Tiers.IRON, 25, 30, CartoonHamer.properties));
     public static final RegistryObject<Item> LIGHTNING_ROD_ITEM = ITEMS.register("lightning_rod",
             () -> new LightningRod(LightningRod.props));
     public static final RegistryObject<Item> TELEPORT_ROD_ITEM = ITEMS.register("teleport_rod",

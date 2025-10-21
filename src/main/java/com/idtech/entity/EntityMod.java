@@ -30,41 +30,42 @@ public class EntityMod {
                     () -> EntityType.Builder.of(CartoonMan::new, MobCategory.MONSTER)
                             .build(new ResourceLocation(BaseMod.MODID, "cartoonman").toString()));
 
-    public static final RegistryObject<EntityType<CartoonMan>> REDSTONE_GOLEM =
-            ENTITY_TYPES.register("redstoner_golem",
-                    () -> EntityType.Builder.of(CartoonMan::new, MobCategory.MONSTER)
-                            .build(new ResourceLocation(BaseMod.MODID, "redstone_golem").toString()));
+    public static final RegistryObject<EntityType<RedstoneGolem>> REDSTONE_GOLEM =
+            ENTITY_TYPES.register("redstone_golem",
+                    () -> EntityType.Builder.of(RedstoneGolem::new, MobCategory.MISC).sized(1.4f,2.7f)
+                            .build(new ResourceLocation(BaseMod.MODID,"redstone_golem").toString()));
+
 
     public static void register(IEventBus eBus){
         ENTITY_TYPES.register(eBus );
     }
 
-//    @SubscribeEvent
-//    public static void registerEntities(final RegistryEvent.Register<EntityType<?>> event){
-//        event.getRegistry().register(ZomboEntity.TYPE);
-//        event.getRegistry().register(CartoonMan.TYPE);
-//        event.getRegistry().register(RedstoneGolem.TYPE);
-//    }
-//    @SubscribeEvent
-//    public static void registerEntityEggs(final RegistryEvent.Register<Item> event) {
-//        event.getRegistry().register(ZomboEntity.EGG);
-//        event.getRegistry().register(CartoonMan.EGG);
-//        event.getRegistry().register(RedstoneGolem.EGG);
-//    }
-//    @SubscribeEvent
-//    public static void entityRenderers(final EntityRenderersEvent.RegisterRenderers event){
-//        event.registerEntityRenderer(ZomboEntity.TYPE, ZomboRenderFactory.INSTANCE);
-//        event.registerEntityRenderer(CartoonMan.TYPE, CartoonManRenderFactory.INSTANCE);
-//        event.registerEntityRenderer(RedstoneGolem.TYPE, RedstoneGolemRenderFactory.INSTANCE);
-//    }
+    @SubscribeEvent
+    public static void registerEntities(final RegistryEvent.Register<EntityType<?>> event){
+        event.getRegistry().register(ZomboEntity.TYPE);
+        event.getRegistry().register(CartoonMan.TYPE);
+     //   event.getRegistry().register(RedstoneGolem.);
+   }
+    @SubscribeEvent
+    public static void registerEntityEggs(final RegistryEvent.Register<Item> event) {
+        event.getRegistry().register(ZomboEntity.EGG);
+        event.getRegistry().register(CartoonMan.EGG);
+      // event.getRegistry().register(RedstoneGolem.EGG);
+   }
+    @SubscribeEvent
+    public static void entityRenderers(final EntityRenderersEvent.RegisterRenderers event){
+       event.registerEntityRenderer(ZomboEntity.TYPE, ZomboRenderFactory.INSTANCE);
+        event.registerEntityRenderer(CartoonMan.TYPE, CartoonManRenderFactory.INSTANCE);
+      // event.registerEntityRenderer(RedstoneGolem.TYPE, RedstoneGolemRenderFactory.INSTANCE);
+    }
 
     // this is different than in 1.16 but everything else is the same
     // I do think this makes more sense than the other way but alas change is usually hard.
-    @SubscribeEvent
-    public static void onAttributeCreate(EntityAttributeCreationEvent event) {
-        event.put(ZomboEntity.TYPE, ZomboEntity.createAttributes().build());
-        event.put(CartoonMan.TYPE, CartoonMan.createAttributes().build());
-        event.put(RedstoneGolem.TYPE, RedstoneGolem.createAttributes().build());
-    }
+//    @SubscribeEvent
+//    public static void onAttributeCreate(EntityAttributeCreationEvent event) {
+//        event.put(ZomboEntity.TYPE, ZomboEntity.createAttributes().build());
+//        event.put(CartoonMan.TYPE, CartoonMan.createAttributes().build());
+//        event.put(RedstoneGolem.TYPE, RedstoneGolem.setAttributes());
+//    }
 
 }

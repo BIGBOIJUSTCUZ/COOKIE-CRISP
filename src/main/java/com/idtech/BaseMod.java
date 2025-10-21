@@ -5,9 +5,11 @@ import com.idtech.enchantment.EnchantmentMod;
 import com.idtech.entity.*;
 import com.idtech.entity.redstone_golem.RedstoneGolem;
 import com.idtech.entity.redstone_golem.RedstoneGolemModel;
+import com.idtech.entity.redstone_golem.RedstoneGolemRenderer;
 import com.idtech.item.*;
 
 //import com.idtech.world.WorldMod;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
@@ -17,6 +19,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.redstone.Redstone;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.TierSortingRegistry;
@@ -57,7 +60,7 @@ public class BaseMod {
         ItemMod.register(eBus);
         BlockMod.register(eBus);
         EntityMod.register(eBus);
-
+       // EntityRenderers.register(RedstoneGolem.TYPE, RedstoneGolemRenderer::new);
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         // Register the enqueueIMC method for modloading
@@ -170,10 +173,10 @@ public class BaseMod {
         public static void entityRenderers(final EntityRenderersEvent.RegisterRenderers event){
            // EntityMod.entityRenderers(event);
         }
-        @SubscribeEvent
-        public static void attributeRegister(EntityAttributeCreationEvent event) {
-            EntityMod.onAttributeCreate(event);
-        }
+     //   @SubscribeEvent
+       // public static void attributeRegister(EntityAttributeCreationEvent event) {
+       //     EntityMod.onAttributeCreate(event);
+       // }
 
         @SubscribeEvent
         public static void registerEnchantments(final RegistryEvent.Register<Enchantment> event){
@@ -183,7 +186,7 @@ public class BaseMod {
         @SubscribeEvent
         public static void clientSetup(EntityRenderersEvent.RegisterLayerDefinitions event){
             event.registerLayerDefinition(CartoonManModel.LAYER_LOCATION,CartoonManModel::createBodyLayer);
-            event.registerLayerDefinition(RedstoneGolemModel.LAYER_LOCATION, RedstoneGolemModel::createBodyLayer);
+        EntityRenderers.register(EntityMod.REDSTONE_GOLEM.get(),RedstoneGolemRenderer::new);
         }
     }
 }

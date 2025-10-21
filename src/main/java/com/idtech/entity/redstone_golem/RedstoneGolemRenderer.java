@@ -26,6 +26,6 @@ public class RedstoneGolemRenderer extends GeoEntityRenderer<RedstoneGolem> {
                                     MultiBufferSource renderTypeBuffer, VertexConsumer vertexBuilder, int packedLightIn,
                                     ResourceLocation textureLocation){
         stack.scale(1.0f,1.0f,1.0f);
-        return super.getRenderType(animatable, partialTicks, stack, renderTypeBuffer, vertextBuilder, packedLightIn, textureLocation);
+        return super.getRenderType(animatable, partialTicks, stack, renderTypeBuffer, vertexBuilder, packedLightIn, textureLocation);
     }
 }

@@ -18,6 +18,10 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import software.bernie.geckolib3.core.IAnimatable;
+import software.bernie.geckolib3.core.PlayState;
+import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.controller.AnimationController;
+import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
@@ -31,6 +35,10 @@ public class RedstoneGolem extends AbstractGolem implements IAnimatable {
 //           EntityType.Builder.of(RedstoneGolem::new, MobCategory.MONSTER).sized(0.6F, 1.95F).
 //                   clientTrackingRange(8).build("redstone_golem").setRegistryName(BaseMod.MODID, "redstone_golem");
 //    public static final Item EGG = EntityUtils.buildEntitySpawnEgg(EntityMod.REDSTONE_GOLEM.get(),0x605E5E, 0xF60B0B);
+
+    private AnimationFactory factory = new AnimationFactory(this);
+
+
 
     public RedstoneGolem(EntityType<? extends RedstoneGolem> entityIn, Level levelIn){
         super(entityIn,levelIn);
@@ -50,13 +58,22 @@ public class RedstoneGolem extends AbstractGolem implements IAnimatable {
         return Mob.createMobAttributes().add(Attributes.MAX_HEALTH,250.0d).add(Attributes.MOVEMENT_SPEED,0.25D).add(Attributes.KNOCKBACK_RESISTANCE,1.0d).add(Attributes.ATTACK_DAMAGE,20.0d).build();
     }
 
+   private <E extends IAnimatable>PlayState predicate(AnimationEvent<E> event){
+        if(event.isMoving()){
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.redstone_golem.walking",true));
+        }
+        return PlayState.CONTINUE;
+   }
+
+
+
     @Override
     public void registerControllers(AnimationData data) {
-
+        data.addAnimationController(new AnimationController<>(this,"controller",0,this::predicate));
     }
 
     @Override
     public AnimationFactory getFactory() {
-        return null;
+        return this.factory;
     }
 }
