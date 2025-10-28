@@ -17,7 +17,7 @@ public class ItemMod {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, BaseMod.MODID);
 
-  public static final RegistryObject<Item> STRUCTURE_GEL = ITEMS.register("structurgel",
+  public static final RegistryObject<Item> STRUCTURE_GEL = ITEMS.register("structuregel",
            () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
     public static final RegistryObject<Item> OHS_ITEM = ITEMS.register("ohs",
             () -> new OHS (Tiers.NETHERITE,1000000, 100, OHS.properties));
@@ -29,8 +29,8 @@ public class ItemMod {
             () -> new LightningRod(LightningRod.props));
     public static final RegistryObject<Item> TELEPORT_ROD_ITEM = ITEMS.register("teleport_rod",
             () -> new TeleportRodItem(TeleportRodItem.props));
-    public static final RegistryObject<Item> BOMB_ARROW_ITEM = ITEMS.register("bombarrow",
-            () -> new BombArrowItem(BombArrowItem.properties));
+//    public static final RegistryObject<Item> BOMB_ARROW_ITEM = ITEMS.register("bombarrow",
+//            () -> new BombArrowItem(BombArrowItem.properties));
     public static final RegistryObject<Item> THROWABLE_FIREBALL_ITEM = ITEMS.register("throwable_fireball_item",
             () -> new ThrowableFireballItem(ThrowableFireballItem.props));
     //FOODS

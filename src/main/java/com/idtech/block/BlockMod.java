@@ -2,6 +2,7 @@ package com.idtech.block;
 
 
 import com.idtech.BaseMod;
+//import com.idtech.item.ItemMod;
 import com.idtech.item.ItemMod;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;

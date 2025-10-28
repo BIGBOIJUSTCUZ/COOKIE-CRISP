@@ -14,7 +14,5 @@ public class ModEventBusEvents {
     @SubscribeEvent
     public static void entityAttributeEvent(EntityAttributeCreationEvent event){
         event.put(EntityMod.REDSTONE_GOLEM.get(),RedstoneGolem.setAttributes());
-        event.put(ZomboEntity.TYPE, ZomboEntity.createAttributes().build());
-        event.put(CartoonMan.TYPE, CartoonMan.createAttributes().build());
     }
 }

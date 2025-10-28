@@ -1,14 +1,16 @@
 package com.idtech;
 
-import com.idtech.block.*;
+//import com.idtech.block.*;
+import com.idtech.block.BlockMod;
 import com.idtech.enchantment.EnchantmentMod;
 import com.idtech.entity.*;
 import com.idtech.entity.redstone_golem.RedstoneGolem;
 import com.idtech.entity.redstone_golem.RedstoneGolemModel;
 import com.idtech.entity.redstone_golem.RedstoneGolemRenderer;
-import com.idtech.item.*;
+//import com.idtech.item.*;
 
 //import com.idtech.world.WorldMod;
+import com.idtech.item.ItemMod;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -57,7 +59,7 @@ public class BaseMod {
 
     public BaseMod() {
         IEventBus eBus = FMLJavaModLoadingContext.get().getModEventBus();
-        ItemMod.register(eBus);
+//        ItemMod.register(eBus);
         BlockMod.register(eBus);
         EntityMod.register(eBus);
        // EntityRenderers.register(RedstoneGolem.TYPE, RedstoneGolemRenderer::new);
@@ -67,6 +69,7 @@ public class BaseMod {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
         // Register the processIMC method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
+        BaseMod.LOGGER.info("Initialize GeckoLib");
         GeckoLib.initialize();
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -88,6 +91,7 @@ public class BaseMod {
 //        MinecraftForge.EVENT_BUS.register(CustomEvent.class);
 //        MinecraftForge.EVENT_BUS.addListener(EventMod::isHoldingEvent);
         //Adds the RegisterCommandEvent as an event and sets a listener for it during FMLCommonSetup
+        EntityRenderers.register(EntityMod.REDSTONE_GOLEM.get(),RedstoneGolemRenderer::new);
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
@@ -149,7 +153,6 @@ public class BaseMod {
          *
          * @param event RegistryEvent to access the entity registry
          */
-        @SubscribeEvent
         public static void registerEntities(final RegistryEvent.Register<EntityType<?>> event) {
             BaseMod.LOGGER.info("Registering Entities");
             // Add item registry calls here.
@@ -169,10 +172,10 @@ public class BaseMod {
 
         }
 
-        @SubscribeEvent
-        public static void entityRenderers(final EntityRenderersEvent.RegisterRenderers event){
-           // EntityMod.entityRenderers(event);
-        }
+//        @SubscribeEvent
+//        public static void entityRenderers(final EntityRenderersEvent.RegisterRenderers event){
+//           // EntityMod.entityRenderers(event);
+//        }
      //   @SubscribeEvent
        // public static void attributeRegister(EntityAttributeCreationEvent event) {
        //     EntityMod.onAttributeCreate(event);
@@ -183,9 +186,8 @@ public class BaseMod {
             EnchantmentMod.registerEnchantments(event);
         }
 
-        @SubscribeEvent
         public static void clientSetup(EntityRenderersEvent.RegisterLayerDefinitions event){
-            event.registerLayerDefinition(CartoonManModel.LAYER_LOCATION,CartoonManModel::createBodyLayer);
+//            event.registerLayerDefinition(CartoonManModel.LAYER_LOCATION,CartoonManModel::createBodyLayer);
         EntityRenderers.register(EntityMod.REDSTONE_GOLEM.get(),RedstoneGolemRenderer::new);
         }
     }
