@@ -1,5 +1,6 @@
 package com.idtech.entity;
 import com.idtech.item.BombArrowItem;
+import com.idtech.item.ItemMod;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
@@ -16,7 +17,7 @@ public class BombArrow extends AbstractArrow{
 
     @Override
     protected ItemStack getPickupItem() {
-        return new ItemStack(BombArrowItem.INSTANCE);
+        return new ItemStack(ItemMod.BOMB_ARROW_ITEM.get());
     }
 
     int count = 0;

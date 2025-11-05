@@ -17,7 +17,7 @@ import net.minecraft.world.phys.Vec3;
 public class ThrowableFireballItem extends Item {
 
     public static final Properties props = new Properties().tab(CreativeModeTab.TAB_MISC);
-    public static final Item INSTANCE = new ThrowableFireballItem(props).setRegistryName("throwable_fireball_item");
+    //public static final Item INSTANCE = new ThrowableFireballItem(props).setRegistryName("throwable_fireball_item");
 
     public ThrowableFireballItem(Properties props){
         super(props);

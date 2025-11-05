@@ -18,7 +18,7 @@ public class BombArrowItem extends ArrowItem
         super (properties);
     }
 
-    public static Item INSTANCE = new BombArrowItem(properties).setRegistryName("bombarrow");
+    //public static Item INSTANCE = new BombArrowItem(properties).setRegistryName("bombarrow");
 
     @Override
     public AbstractArrow createArrow(Level levelIn, ItemStack stack, LivingEntity shooter) {

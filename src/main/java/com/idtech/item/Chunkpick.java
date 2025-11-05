@@ -16,7 +16,7 @@ public class Chunkpick extends PickaxeItem {
 //            , 9999.0F, 10.0F, 30,
 //            null, ()->{return Ingredient.of(ItemMod.STRUCTURE_GEL.get());});
     public static Properties properties = new Item.Properties().tab(CreativeModeTab.TAB_MISC);
-    public static Item INSTANCE = new Chunkpick(Tiers.IRON,100, 100, properties).setRegistryName(BaseMod.MODID,"chunkpick");
+  // public static Item INSTANCE = new Chunkpick(Tiers.IRON,100, 100, properties).setRegistryName(BaseMod.MODID,"chunkpick");
 
     public Chunkpick(Tier tier, int attackDamageIn, float attackSpeedIn, Properties properties){
         super(tier, attackDamageIn, attackSpeedIn, properties);

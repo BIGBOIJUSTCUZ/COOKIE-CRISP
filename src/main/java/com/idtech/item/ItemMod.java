@@ -21,16 +21,16 @@ public class ItemMod {
            () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
     public static final RegistryObject<Item> OHS_ITEM = ITEMS.register("ohs",
             () -> new OHS (Tiers.NETHERITE,1000000, 100, OHS.properties));
-//    public static final RegistryObject<Item> CHUNKPICK_ITEM = ITEMS.register("chunckpick",
-//            () -> new Chunkpick(Tiers.IRON,100, 100, Chunkpick.properties));
-//    public static final RegistryObject<Item> CARTOON_HAMMER_ITEM = ITEMS.register("cartoonh",
-//            () -> new CartoonHamer(Tiers.IRON, 25, 30, CartoonHamer.properties));
+    public static final RegistryObject<Item> CHUNKPICK_ITEM = ITEMS.register("chunckpick",
+            () -> new Chunkpick(Tiers.IRON,100, 100, Chunkpick.properties));
+    public static final RegistryObject<Item> CARTOON_HAMMER_ITEM = ITEMS.register("cartoonh",
+            () -> new CartoonHamer(Tiers.IRON, 25, 30, CartoonHamer.properties));
     public static final RegistryObject<Item> LIGHTNING_ROD_ITEM = ITEMS.register("lightning_rod",
             () -> new LightningRod(LightningRod.props));
     public static final RegistryObject<Item> TELEPORT_ROD_ITEM = ITEMS.register("teleport_rod",
             () -> new TeleportRodItem(TeleportRodItem.props));
-//    public static final RegistryObject<Item> BOMB_ARROW_ITEM = ITEMS.register("bombarrow",
-//            () -> new BombArrowItem(BombArrowItem.properties));
+    public static final RegistryObject<Item> BOMB_ARROW_ITEM = ITEMS.register("bombarrow",
+            () -> new BombArrowItem(BombArrowItem.properties));
     public static final RegistryObject<Item> THROWABLE_FIREBALL_ITEM = ITEMS.register("throwable_fireball_item",
             () -> new ThrowableFireballItem(ThrowableFireballItem.props));
     //FOODS
@@ -38,5 +38,5 @@ public class ItemMod {
     public static void register(IEventBus bus){
         ITEMS.register(bus);
     }
-
+//Change chunk pik to Actually break chunks
 }

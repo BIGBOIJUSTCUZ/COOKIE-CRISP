@@ -14,7 +14,7 @@ import net.minecraft.world.level.Level;
 
 public class TeleportRodItem extends Item {
     public static Properties props = new Properties().tab(CreativeModeTab.TAB_MISC);
-    public static final Item INSTANCE = new TeleportRodItem(props).setRegistryName(BaseMod.MODID, "teleport_rod");
+   // public static final Item INSTANCE = new TeleportRodItem(props).setRegistryName(BaseMod.MODID, "teleport_rod");
 
     public TeleportRodItem(Properties p_41383_) {
         super(p_41383_);

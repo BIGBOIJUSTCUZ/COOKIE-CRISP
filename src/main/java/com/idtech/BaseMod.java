@@ -59,7 +59,7 @@ public class BaseMod {
 
     public BaseMod() {
         IEventBus eBus = FMLJavaModLoadingContext.get().getModEventBus();
-//        ItemMod.register(eBus);
+        ItemMod.register(eBus);
         BlockMod.register(eBus);
         EntityMod.register(eBus);
        // EntityRenderers.register(RedstoneGolem.TYPE, RedstoneGolemRenderer::new);

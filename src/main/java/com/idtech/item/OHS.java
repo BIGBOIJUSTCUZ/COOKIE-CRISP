@@ -11,7 +11,7 @@ public class OHS extends SwordItem {
 
     public static Tier tier = new ForgeTier(4, 1000000, 25.0F, 10.0F, 10,null, ()->{return Ingredient.of(ItemMod.STRUCTURE_GEL.get());});
     public static Properties properties = new Item.Properties().tab(CreativeModeTab.TAB_MISC);
-    public static Item INSTANCE = new OHS (Tiers.NETHERITE,1000000, 100, properties).setRegistryName(BaseMod.MODID,"ohs");
+   // public static Item INSTANCE = new OHS (Tiers.NETHERITE,1000000, 100, properties).setRegistryName(BaseMod.MODID,"ohs");
 
     public OHS (Tier tier, int attackDamageIn, float attackSpeedIn, Properties properties) {
         super(tier, attackDamageIn, attackSpeedIn, properties);
