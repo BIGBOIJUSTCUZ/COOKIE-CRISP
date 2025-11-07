@@ -25,10 +25,10 @@ public class EntityMod {
                     () -> EntityType.Builder.of(ZomboEntity::new, MobCategory.MONSTER)
                             .build(new ResourceLocation(BaseMod.MODID, "zombo").toString()));
 
-//    public static final RegistryObject<EntityType<CartoonMan>> CARTOON_MAN =
-//            ENTITY_TYPES.register("cartoonman",
-//                    () -> EntityType.Builder.of(CartoonMan::new, MobCategory.MONSTER)
-//                            .build(new ResourceLocation(BaseMod.MODID, "cartoonman").toString()));
+    public static final RegistryObject<EntityType<CartoonMan>> CARTOON_MAN =
+            ENTITY_TYPES.register("cartoonman",
+                    () -> EntityType.Builder.of(CartoonMan::new, MobCategory.MONSTER)
+                            .build(new ResourceLocation(BaseMod.MODID, "cartoonman").toString()));
 
     public static final RegistryObject<EntityType<RedstoneGolem>> REDSTONE_GOLEM =
             ENTITY_TYPES.register("redstone_golem",

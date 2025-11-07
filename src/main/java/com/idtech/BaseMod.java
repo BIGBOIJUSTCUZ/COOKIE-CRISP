@@ -92,6 +92,8 @@ public class BaseMod {
 //        MinecraftForge.EVENT_BUS.addListener(EventMod::isHoldingEvent);
         //Adds the RegisterCommandEvent as an event and sets a listener for it during FMLCommonSetup
         EntityRenderers.register(EntityMod.REDSTONE_GOLEM.get(),RedstoneGolemRenderer::new);
+        EntityRenderers.register(EntityMod.ZOMBO_ENTITY.get(),ZomboRenderer::new);
+        EntityRenderers.register(EntityMod.CARTOON_MAN.get(),CartoonManRenderer::new);
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
@@ -185,10 +187,9 @@ public class BaseMod {
         public static void registerEnchantments(final RegistryEvent.Register<Enchantment> event){
             EnchantmentMod.registerEnchantments(event);
         }
-
+        @SubscribeEvent
         public static void clientSetup(EntityRenderersEvent.RegisterLayerDefinitions event){
-//            event.registerLayerDefinition(CartoonManModel.LAYER_LOCATION,CartoonManModel::createBodyLayer);
-        EntityRenderers.register(EntityMod.REDSTONE_GOLEM.get(),RedstoneGolemRenderer::new);
+            event.registerLayerDefinition(CartoonManModel.LAYER_LOCATION, CartoonManModel::createBodyLayer);
         }
     }
 }

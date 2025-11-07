@@ -24,11 +24,11 @@ import net.minecraft.world.level.Level;
 public class CartoonMan extends PathfinderMob implements Enemy
 {
     //TYPE
-    public static EntityType<CartoonMan> TYPE = (EntityType<CartoonMan>)
-            EntityType.Builder.of(CartoonMan::new, MobCategory.MONSTER).sized(0.6F, 1.95F).
-                    clientTrackingRange(8).build("cartoonman").setRegistryName(BaseMod.MODID, "cartoonman");
+//    public static EntityType<CartoonMan> TYPE = (EntityType<CartoonMan>)
+//            EntityType.Builder.of(CartoonMan::new, MobCategory.MONSTER).sized(0.6F, 1.95F).
+//                    clientTrackingRange(8).build("cartoonman").setRegistryName(BaseMod.MODID, "cartoonman");
     //EGG
-    public static Item EGG = EntityUtils.buildEntitySpawnEgg(TYPE, 0xfef9f8 , 0x383737);
+   // public static Item EGG = EntityUtils.buildEntitySpawnEgg(EntityMod.CARTOON_MAN.get(), 0xfef9f8 , 0x383737);
 
     public CartoonMan (EntityType<? extends PathfinderMob> cartoon_man, Level level ) {
         super(cartoon_man, level);
@@ -42,6 +42,10 @@ public class CartoonMan extends PathfinderMob implements Enemy
                 .add(Attributes.ATTACK_DAMAGE, 10000)
                 .add(Attributes.FOLLOW_RANGE, 10000);
     }
+    public static AttributeSupplier setAttributes(){
+       return createAttributes().build();
+    }
+
 
     @Override
     public void registerGoals(){
