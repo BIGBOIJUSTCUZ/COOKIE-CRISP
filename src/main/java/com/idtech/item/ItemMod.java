@@ -1,9 +1,11 @@
 package com.idtech.item;
 
 import com.idtech.BaseMod;
+import com.idtech.entity.EntityMod;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Tiers;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -33,6 +35,10 @@ public class ItemMod {
             () -> new BombArrowItem(BombArrowItem.properties));
     public static final RegistryObject<Item> THROWABLE_FIREBALL_ITEM = ITEMS.register("throwable_fireball_item",
             () -> new ThrowableFireballItem(ThrowableFireballItem.props));
+
+    public static final RegistryObject<Item> HEROBRINE_SPAWN_EGG = ITEMS.register("herobrine_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntityMod.ZOMBO_ENTITY,0xb00101, 0xacbf1f,
+                    new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
     //FOODS
 
     public static void register(IEventBus bus){

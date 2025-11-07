@@ -14,12 +14,12 @@ public class ZomboEntity extends Zombie {
     public ZomboEntity(EntityType<? extends Zombie> type, Level level) {
         super(type, level);
     }
-    public static EntityType<ZomboEntity> TYPE = (EntityType<ZomboEntity>)
-            EntityType.Builder.of(ZomboEntity::new, MobCategory.MONSTER)
-                    .build("zombo")
-                    .setRegistryName(BaseMod.MODID, "zombo");
+//    public static EntityType<ZomboEntity> TYPE = (EntityType<ZomboEntity>)
+//            EntityType.Builder.of(ZomboEntity::new, MobCategory.MONSTER)
+//                    .build("zombo")
+//                    .setRegistryName(BaseMod.MODID, "zombo");
 
-    public static Item EGG = EntityUtils.buildEntitySpawnEgg(TYPE, 0xb00101, 0xacbf1f);
+    //public static Item EGG = EntityUtils.buildEntitySpawnEgg(TYPE, 0xb00101, 0xacbf1f);
 
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
@@ -30,4 +30,10 @@ public class ZomboEntity extends Zombie {
                 .add(Attributes.ARMOR, 2.0D)
                 .add(Attributes.SPAWN_REINFORCEMENTS_CHANCE);
     }
+
+
+    public static AttributeSupplier setAttributes() {
+        return createAttributes().build();
+    }
+
 }
