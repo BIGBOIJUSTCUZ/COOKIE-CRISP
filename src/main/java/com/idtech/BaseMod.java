@@ -4,6 +4,8 @@ package com.idtech;
 import com.idtech.block.BlockMod;
 import com.idtech.enchantment.EnchantmentMod;
 import com.idtech.entity.*;
+import com.idtech.entity.dweller.DwellerModel;
+import com.idtech.entity.dweller.DwellerRenderer;
 import com.idtech.entity.redstone_golem.RedstoneGolem;
 import com.idtech.entity.redstone_golem.RedstoneGolemModel;
 import com.idtech.entity.redstone_golem.RedstoneGolemRenderer;
@@ -94,6 +96,7 @@ public class BaseMod {
         EntityRenderers.register(EntityMod.REDSTONE_GOLEM.get(),RedstoneGolemRenderer::new);
         EntityRenderers.register(EntityMod.ZOMBO_ENTITY.get(),ZomboRenderer::new);
         EntityRenderers.register(EntityMod.CARTOON_MAN.get(),CartoonManRenderer::new);
+        EntityRenderers.register(EntityMod.DWELLER.get(),DwellerRenderer::new);
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
@@ -190,6 +193,7 @@ public class BaseMod {
         @SubscribeEvent
         public static void clientSetup(EntityRenderersEvent.RegisterLayerDefinitions event){
             event.registerLayerDefinition(CartoonManModel.LAYER_LOCATION, CartoonManModel::createBodyLayer);
+       //     event.registerLayerDefinition(DwellerModel.);
         }
     }
 }

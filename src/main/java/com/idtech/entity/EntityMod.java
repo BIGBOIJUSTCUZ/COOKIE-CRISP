@@ -1,6 +1,7 @@
 package com.idtech.entity;
 
 import com.idtech.BaseMod;
+import com.idtech.entity.dweller.Dweller;
 import com.idtech.entity.redstone_golem.RedstoneGolem;
 import com.idtech.entity.redstone_golem.RedstoneGolemRenderFactory;
 import net.minecraft.resources.ResourceLocation;
@@ -34,6 +35,11 @@ public class EntityMod {
             ENTITY_TYPES.register("redstone_golem",
                     () -> EntityType.Builder.of(RedstoneGolem::new, MobCategory.MISC).sized(1.4f,2.7f)
                             .build(new ResourceLocation(BaseMod.MODID,"redstone_golem").toString()));
+
+    public static final RegistryObject<EntityType<Dweller>> DWELLER =
+            ENTITY_TYPES.register("dweller",
+                    () -> EntityType.Builder.of(Dweller::new, MobCategory.MISC).sized(1.4f,2.7f)
+                            .build(new ResourceLocation(BaseMod.MODID,"dweller").toString()));
 
 
     public static void register(IEventBus eBus){

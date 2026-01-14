@@ -11,8 +11,8 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
 public class DwellerRenderer extends GeoEntityRenderer<Dweller> {
-    public DwellerRenderer(EntityRendererProvider.Context renderManager, AnimatedGeoModel<Dweller> modelProvider) {
-        super(renderManager, modelProvider);
+    public DwellerRenderer(EntityRendererProvider.Context renderManager) {
+        super(renderManager, new DwellerModel());
         this.shadowRadius=0.0f;
     }
 
