@@ -8,14 +8,14 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 public class DwellerModel extends AnimatedGeoModel<Dweller> {
     @Override
     public ResourceLocation getModelLocation(Dweller obj){
-        return new ResourceLocation(BaseMod.MODID, "geo/redstone_golem.geo.json");
+        return new ResourceLocation(BaseMod.MODID, "geo/dweller.geo.json");
     }
     @Override
     public ResourceLocation getTextureLocation(Dweller obj){
-        return new ResourceLocation(BaseMod.MODID, "textures/entity/redstone_golem.png");
+        return new ResourceLocation(BaseMod.MODID, "textures/entity/dweller.png");
     }
     @Override
     public ResourceLocation getAnimationFileLocation(Dweller obj){
-        return new ResourceLocation(BaseMod.MODID, "animations/redstone_golem.animation.json");
+        return new ResourceLocation(BaseMod.MODID, "animations/dweller.animation.json");
     }
 }

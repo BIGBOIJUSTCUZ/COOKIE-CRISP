@@ -4,6 +4,7 @@ import com.idtech.BaseMod;
 import com.idtech.entity.CartoonMan;
 import com.idtech.entity.EntityMod;
 import com.idtech.entity.ZomboEntity;
+import com.idtech.entity.dweller.Dweller;
 import com.idtech.entity.redstone_golem.RedstoneGolem;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -16,5 +17,6 @@ public class ModEventBusEvents {
         event.put(EntityMod.REDSTONE_GOLEM.get(),RedstoneGolem.setAttributes());
         event.put(EntityMod.ZOMBO_ENTITY.get(),ZomboEntity.setAttributes());
         event.put(EntityMod.CARTOON_MAN.get(),CartoonMan.setAttributes());
+        event.put(EntityMod.DWELLER.get(), Dweller.setAttributes());
     }
 }

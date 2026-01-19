@@ -41,12 +41,12 @@ public class Dweller extends Monster implements IAnimatable {
     }
 
     public static AttributeSupplier setAttributes(){
-        return Mob.createMobAttributes().add(Attributes.MAX_HEALTH,250.0d).add(Attributes.MOVEMENT_SPEED,0.25D).add(Attributes.KNOCKBACK_RESISTANCE,1.0d).add(Attributes.ATTACK_DAMAGE,20.0d).build();
+        return Mob.createMobAttributes().add(Attributes.MAX_HEALTH,99999999.0d).add(Attributes.MOVEMENT_SPEED,0.25D).add(Attributes.KNOCKBACK_RESISTANCE,1.0d).add(Attributes.ATTACK_DAMAGE,20.0d).build();
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event){
         if(event.isMoving()){
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.redstone_golem.walking",true));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.dweller.walk",true));
         }
         return PlayState.CONTINUE;
     }
