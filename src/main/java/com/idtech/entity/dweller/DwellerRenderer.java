@@ -7,13 +7,18 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
-import software.bernie.geckolib3.model.AnimatedGeoModel;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
+import software.bernie.geckolib3.renderers.geo.layer.LayerGlowingAreasGeo;
 
 public class DwellerRenderer extends GeoEntityRenderer<Dweller> {
     public DwellerRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new DwellerModel());
         this.shadowRadius=0.0f;
+        addLayer(new LayerGlowingAreasGeo(this,
+                entity -> this.getGeoModelProvider().getTextureLocation((Dweller) entity),
+                entity -> this.getGeoModelProvider().getModelLocation((Dweller) entity),
+                resourceLocation -> RenderType.eyes((ResourceLocation) resourceLocation)
+                ));
     }
 
     @Override
