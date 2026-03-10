@@ -13,6 +13,7 @@ import com.idtech.entity.redstone_golem.RedstoneGolemRenderer;
 
 //import com.idtech.world.WorldMod;
 import com.idtech.item.ItemMod;
+import com.idtech.sound.SoundMod;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -64,6 +65,7 @@ public class BaseMod {
         ItemMod.register(eBus);
         BlockMod.register(eBus);
         EntityMod.register(eBus);
+        SoundMod.register(eBus);
        // EntityRenderers.register(RedstoneGolem.TYPE, RedstoneGolemRenderer::new);
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);

@@ -38,7 +38,7 @@ public class EntityMod {
 
     public static final RegistryObject<EntityType<Dweller>> DWELLER =
             ENTITY_TYPES.register("dweller",
-                    () -> EntityType.Builder.of(Dweller::new, MobCategory.MISC).sized(1.4f,2.7f)
+                    () -> EntityType.Builder.of(Dweller::new, MobCategory.MISC).sized(1.4f,4.1f)
                             .build(new ResourceLocation(BaseMod.MODID,"dweller").toString()));
 
 
