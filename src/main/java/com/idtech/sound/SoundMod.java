@@ -12,6 +12,8 @@ public class SoundMod {
     public static final DeferredRegister<SoundEvent> SOUND_EVENTS =
             DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, BaseMod.MODID);
 
+    public static final RegistryObject<SoundEvent> DWELLER_AMBIENT = registerSoundEvent("dweller_ambient");
+    public static final RegistryObject<SoundEvent> DWELLER_SPAWN = registerSoundEvent("dweller_spawn");
     private static RegistryObject <SoundEvent> registerSoundEvent (String name){
         return SOUND_EVENTS.register(name, () -> new SoundEvent(new ResourceLocation(BaseMod.MODID, name)));
     }

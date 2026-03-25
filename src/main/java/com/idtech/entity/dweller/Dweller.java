@@ -1,6 +1,8 @@
 package com.idtech.entity.dweller;
 
 import com.idtech.entity.redstone_golem.RedstoneGolem;
+import com.idtech.sound.SoundMod;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
@@ -51,7 +53,19 @@ public class Dweller extends Monster implements IAnimatable {
         return PlayState.CONTINUE;
     }
 
+    public int getAmbientSoundInterval() {
+        return 40;
+    }
 
+
+
+    protected SoundEvent getAmbientSound(){
+        return SoundMod.DWELLER_AMBIENT.get();
+    }
+
+ /*   public void tick (){
+
+    }*/
 
     @Override
     public void registerControllers(AnimationData data) {
