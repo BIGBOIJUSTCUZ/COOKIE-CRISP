@@ -1,0 +1,14 @@
+{
+  "dweller_ambient": {
+    "subtitle": "sounds.examplemod.dweller_ambient",
+    "sounds": [
+      "examplemod:dweller_ambient"
+    ]
+  },
+  "dweller_spawn": {
+    "subtitle": "sounds.examplemod.dweller_spawn",
+    "sounds": [
+      "examplemod:dweller_spawn"
+    ]
+  }
+}

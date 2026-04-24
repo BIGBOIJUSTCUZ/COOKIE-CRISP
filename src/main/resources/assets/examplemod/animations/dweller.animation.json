@@ -51,7 +51,7 @@
 				}
 			}
 		},
-		"animation.model.stand_still": {
+		"animation.dweller.stand_still": {
 			"loop": true,
 			"animation_length": 1.2917,
 			"bones": {
@@ -260,7 +260,7 @@
 				}
 			}
 		},
-		"animation.model.walk": {
+		"animation.dweller.walk": {
 			"loop": true,
 			"animation_length": 1.2917,
 			"bones": {
