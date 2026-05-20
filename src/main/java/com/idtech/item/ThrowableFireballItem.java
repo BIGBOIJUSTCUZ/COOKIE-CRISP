@@ -30,7 +30,7 @@ public class ThrowableFireballItem extends Item {
         if (!levelIn.isClientSide){
             Vec3 tar;
             Vec3 view = playerIn.getViewVector(1.0f);
-            LargeFireball projectile = new LargeFireball(levelIn,playerIn, view.x, view.y, view.z,3);
+            LargeFireball projectile = new LargeFireball(levelIn,playerIn, view.x, view.y, view.z,5);
             projectile.setItem(itemStack);
             projectile.shootFromRotation(playerIn,playerIn.getXRot(),playerIn. getYRot(),0.0f,1.5f,1.0f);
             levelIn.addFreshEntity(projectile);

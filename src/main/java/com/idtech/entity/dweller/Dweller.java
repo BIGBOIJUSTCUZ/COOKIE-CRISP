@@ -1,5 +1,6 @@
 package com.idtech.entity.dweller;
 
+import com.idtech.BaseMod;
 import com.idtech.entity.redstone_golem.RedstoneGolem;
 import com.idtech.sound.SoundMod;
 import net.minecraft.nbt.CompoundTag;
@@ -56,7 +57,13 @@ public class Dweller extends Monster implements IAnimatable {
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event){
         if(event.isMoving()){
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.dweller.walk", ILoopType.EDefaultLoopTypes.LOOP));
+            LivingEntity target = getTarget();
+            if(target instanceof Player){
+                BaseMod.LOGGER.info("THIS SHOULD BE RUNNING");
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.dweller.chase", ILoopType.EDefaultLoopTypes.LOOP));
+            } else {
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.dweller.walk", ILoopType.EDefaultLoopTypes.LOOP));
+            }
             return PlayState.CONTINUE;
         }
 
